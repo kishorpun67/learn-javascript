@@ -25,5 +25,5 @@ console.log(url.replace('%20', '-'))
 console.log(url.includes('kishor'))
 
 let testString = " lorem test hello worl "
- testString =  "lorem test hello worl"
+ testString =  testString.trim("lorem test hello worl")
 console.log(testString.split(" "))
