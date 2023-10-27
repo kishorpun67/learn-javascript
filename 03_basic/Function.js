@@ -39,6 +39,14 @@ arrowFunction()
 const addTwoNumber = (num1, num2) => (num1+num2)
 console.log(addTwoNumber(2,5))
 
+// memory exuction 
+// function =defination  
+// variables = undefined
+
+// exucation phase
+// variables = assign value 
+// function adddNUm(a,b) = create new environment and execution thread  
+
 
 
 
