@@ -9,7 +9,6 @@ switch (agru) {
     case 1:
         console.log('sunday')
         break;
-
     default:
         break;
 }
@@ -27,3 +26,15 @@ if(Object.keys(object).length ==0) {
 
 
 
+//  nullish colaescing operator (??) :nulll undefined
+
+let val;
+val  = 5 ?? 6;
+let val1 = null ?? 20;
+let val2 = undefined ?? 30;
+console.log(val)
+console.log(val1)
+console.log(val2)
+
+let test = null ?? undefined ?? 9;
+console.log(test)
