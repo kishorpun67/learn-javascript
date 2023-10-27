@@ -13,3 +13,17 @@ switch (agru) {
     default:
         break;
 }
+
+let num = [];
+if(num.length == 0) {
+    console.log('empty')
+}
+
+let object = {};
+
+if(Object.keys(object).length ==0) {
+    console.log('empty')
+}
+
+
+
