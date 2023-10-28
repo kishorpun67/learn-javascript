@@ -38,3 +38,11 @@ console.log(val2)
 
 let test = null ?? undefined ?? 9;
 console.log(test)
+
+for (let index = 0; index < 10; index++) {
+    if(index == 5) {
+        console.log('5 dected')
+        continue
+    }
+    console.log(`dex of number ${index}`)
+}
