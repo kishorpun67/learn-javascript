@@ -1,0 +1,17 @@
+.button {
+    align-items: center;
+    height: 80px;
+    width: 80px;
+}
+button:first-child{
+    background-color: rgb(19, 10, 10);
+}
+button:nth-child(1) {
+    background-color: white;
+}
+button:nth-child(2) {
+    background-color: yellow;
+}
+button:last-child{
+    background-color: blue;
+}
