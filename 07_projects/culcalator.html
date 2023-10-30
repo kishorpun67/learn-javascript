@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+
+    <form class="calulator">
+        <input type="text" name="height" id="height" placeholder="height">
+        <input type="text" name="weight" id="weight" placeholder="weight">
+        <button>Submit</button>
+        <br>
+        <br>
+        <div id="results"></div>
+        <br>
+        <h5>BMI Weight Guide</h5>
+        <p>Under Weight = Less than 10.6</p>
+        <p>Normal Range = 18.9 AND 24.6</p>
+        <P>Overweight = Greatan 24</P>
+    </form>
+    <script>
+        const form = document.querySelector('form')
+        form.addEventListener('submit', function(e){
+            e.preventDefault()  
+            const height = parseInt(document.querySelector('#height').value);
+            const weight= parseInt(document.querySelector('#weight').value);
+            const results = document.querySelector('#results')
+            console.log(typeof height, typeof weight)
+            if(height === "" || height < 0  || isNaN(height) ) {
+                results.innerHTML = "Pleas giv a valid height"
+            }else if(weight === '' || weight < 0  || isNaN(weight) ) {
+                results.innerHTML = "Pleas giv a valid weight"
+            } else {
+                const bmi = (weight / ( (height*height) / 10000)).toFixed(2);
+                results.innerHTML= `<span> ${bmi}</span>`
+            }
+
+        })
+
+    </script>
+</body>
+</html>

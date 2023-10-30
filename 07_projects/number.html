@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess The Number</title>
+</head>
+<body>
+    <h1>Guess a number</h1>
+    <form action="#">
+        <input type="text" name="" id="number">
+        <button>Submit Guss</button>
+    </form>
+    <div class="resultParas">
+        <p>Previous Guess : <span class="guesses"></span></p>
+        <p>Previous Remaining : <span class="remaining">10</span></p>
+        <p class="lowOrHi"></p>
+
+    </div>
+</body>
+<script>
+    let form = document.querySelector('form')
+    let total =10;
+    let preViousGuess = [];
+    let validNumber = Math.round((Math.random() * 100))
+    console.log(validNumber)
+
+    form.addEventListener('submit', (e)=> {
+        e.preventDefault()
+        let remaining = document.querySelector('.remaining')
+        if(total <= 0) {
+            remaining.innerHTML = `Remaining guess is ${total} and your are not allow to guess`;
+            return;
+        }
+        const num = parseInt(document.querySelector('#number').value)
+        preViousGuess.push(num);
+        const length = preViousGuess.length-1;
+        total -= 1;
+        const lowOrHigh = document.querySelector(".lowOrHi")
+        const guess = document.querySelector('.guesses')
+        if(num == validNumber) {
+            lowOrHigh.innerHTML = `Gusses is correct and number is ${num}`;
+            guess.innerHTML = `Previous guess is ${preViousGuess[length]}`;
+            remaining.innerHTML = `Remaining guess is ${total}`;
+
+        }else if(num > validNumber){
+            lowOrHigh.innerHTML = `Gusses is incorrect and number is less than ${num} `;
+            guess.innerHTML = `Previous guess is ${preViousGuess[length]}`;
+            remaining.innerHTML = `Remaining guess is ${total}`;
+        }else {
+            lowOrHigh.innerHTML = `Gusses is incorrect and number is greater than ${num} `;
+            guess.innerHTML = `Previous guess is ${preViousGuess[length]}`;
+            remaining.innerHTML = `Remaining guess is ${total}`;
+        }
+    })
+</script>
+</html>
