@@ -12,11 +12,47 @@
     </ul>
 </body>
 <script>
+    // edit 
     const addLanguage = (langName) => {
         let list = document.createElement('li')
-        list.innerText = "Python"
+        list.innerHTML = `${langName}`
+        // let txt = document.createTextNode(`${langName}`)
+        document.querySelector('.language').appendChild(list)
         
     }
+
+    // addLanguage('Python')
+    // addLanguage('java')
+    // addLanguage('php')
+
+    // edit 
+    const addOptiLang = (langName) => {
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLang('Python')
+    addOptiLang('java')
+    addOptiLang('php')
+
+    // edit 
+    const test  = document.querySelector('li:nth-child(2)')
+    const newLi = document.createElement('li')
+    newLi.textContent = "hllo";
+    test.replaceWith(newLi)
+
+    // edit 
+    const first = document.querySelector('li:first-child')
+    first.outerHTML = "<li>TypeScript </li>"
+
+    // remove 
+    const last = document.querySelector('li:las t-child')
+    last.remove()
+
+
+
+
+
     
     
 </script>
