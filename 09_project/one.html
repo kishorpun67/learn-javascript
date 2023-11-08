@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project one</title>
+</head>
+<body>
+    <h1 id="title">Hello world</h1>
+    <button id="start"> start</button>
+
+    <button id="stop"> Stop</button>
+</body>
+<script>
+    let head = document.getElementById("title");
+    let i=0;
+    let changeText = () => {
+        i++
+        head.innerHTML = `learn javascript ${i}`
+    }
+    // let setTime = setTimeout(changeText,2000);
+    // document.getElementById("stop").addEventListener('click', ()=>{
+    //     clearTimeout(setTime)
+    //     console.log('stop')
+    // })
+
+    let setIntervalTime;
+
+    document.getElementById("start").addEventListener('click', ()=>{
+        setIntervalTime = setInterval(changeText, 2000)
+    })
+    document.getElementById("stop").addEventListener('click', ()=>{
+        clearInterval(setIntervalTime)
+    })
+
+
+
+</script>
+</html>
