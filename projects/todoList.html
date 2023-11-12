@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO dO LIST</title>
+</head>
+<body>
+    <div class="container">
+        <h1>To do list</h1>
+        <input type="text" id="task" placeholder="Add Task"> <button id="add">Add</button>
+        <h1>Task List</h1>
+        <ul id="taskList">
+        </ul>
+    </div>
+    
+</body>
+    <script>
+        document.getElementById('add').addEventListener('click', function(){
+            let task = document.getElementById('task').value;
+            const list = document.getElementById('taskList');
+            let deleteTag = document.createElement('a');
+            deleteTag.className = 'delete';
+            deleteTag.innerHTML = 'Delete'
+
+            let addlitag = document.createElement('li')
+            addlitag.className = 'list_name'
+            addlitag.innerHTML = task;
+            // let element = addlitag+deleteTag;
+            console.log(deleteTag)
+            list.appendChild(addlitag,deleteTag)
+        
+        })
+        document.getElementById('taskList').addEventListener('click', (e)=>{
+            console.log(e.target.parentNode)
+            if(e.target.tagName === "LI") {
+                let list = e.target.parentNode;
+                list.remove();
+            }
+        } )
+    </script>
+</html>
