@@ -10,5 +10,10 @@ class User {
     }
 }
 
+User.prototype.upperCase = function(){
+    return this.username.toUpperCase();
+}
+
 userOne = new User('KISHOR', 'kishor@gmail.com' , '12334')
-console.log(userOne.encryptPassword)
+console.log(userOne.encryptPassword())
+console.log(userOne.upperCase())
