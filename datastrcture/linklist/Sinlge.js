@@ -18,7 +18,6 @@ class Node {
   
       if (!this.head) {  // If the list is empty, make the new node the head
         this.head = newNode;
-        
         return;
       }
   
@@ -40,7 +39,7 @@ class Node {
         current = current.next;
       }
       
-      console.log(output + 'null');  // Print the list with an arrow indicating the connection between nodes
+      // console.log(output + 'null');  // Print the list with an arrow indicating the connection between nodes
     }
   }
   
@@ -51,57 +50,58 @@ class Node {
   ll.append(30);
   
   ll.printList();
+
+  class List {
+    constructor(data) {
+      this.head = {
+        value: data,
+        next: null
+      }
+      this.tail = this.head
+      this.size = 1
+    }
+    appendNode(nodeData) {
+      let newNode = {
+        value : nodeData,
+        next : null
+      }
+      this.tail.next = newNode
+      this.tail = newNode
+      this.size += 1;
+    }
+
+    traversing() {
+      let currentNode = this.head;
+      for(let i = 0 ; i< this.size; i++) {
+        console.log(currentNode)
+        currentNode = currentNode.next
+      }
+    }
+
+    deleteNode(index) {
+      let counter = 1
+      let lead = this.head
+      if(index == 1) {
+        this.head = this.head
+      }else {
+        while(counter < index-1) {
+          lead = lead.next
+          counter++
+        }
+
+        
+      }
+
+
+    }
+  }
+
+  let list = new List(300)
+  list.appendNode(400)
+  list.appendNode(500)
+  list.appendNode(600)
+  list.appendNode(700)
+  list.appendNode(800)
+  list.deleteNode()
+  list.traversing()
   
-
-  for(let i=1; i<=5; i++) {
-    let row =  ""
-    for(let j=1; j<=i; j++) {
-      row += "* "
-    }
-    console.log(row)
-  }
-
-
-
-class List{
-  constructor(data) {
-    this.head = {
-      value:data,
-      next:null
-    }
-    this.tail = this.head;
-    this.size = 1;
-  }
-  appendNode(data) {
-    let  newNode  = {
-      value : data,
-      next :null
-    }
-
-
-    this.tail.next = newNode
-    this.tail = newNode
-    this.size += 1
-  }
-
-  traverse() 
-  {
-    let counter = 0 
-    let currrentNode = this.head
-    while(counter < this.size) {
-      console.log(currrentNode);
-      currrentNode = currrentNode.next
-      counter++
-      // console.log(currrentNode)
-    }
-  }
-}
-
-let list = new List(200)
-list.appendNode(30)
-list.appendNode(340)
-
-list.traverse()
-// console.log(list)
-
-
