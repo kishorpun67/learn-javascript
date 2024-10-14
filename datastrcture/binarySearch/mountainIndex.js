@@ -7,8 +7,7 @@ function largestIndex(array) {
     let last  = array.length-1;
     while(first<= last) {
         let mid = Math.floor(first + (last-first)/2)
-        // console.log([mid, array[mid-1], array[mid], array[mid+1]])
-        if(array[mid-1] < array[mid] && mid[mid+1] < array[mid]) {
+        if(array[mid-1] < array[mid] && array[mid+1] < array[mid]) {
             return [array[mid], mid];
         } else if(array[mid-1]<array[mid]) {
             first = mid+1
